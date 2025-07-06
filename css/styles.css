@@ -1,0 +1,456 @@
+@font-face {
+  font-family: 'Montserrat';
+  src: url('./fonts/Montserrat-Light.ttf') format('truetype');
+  font-weight: 300;
+}
+@font-face {
+  font-family: 'Montserrat';
+  src: url('./fonts/Montserrat-Bold.ttf') format('truetype');
+  font-weight: 700;
+}
+
+:root {
+  --font_0: 'Montserrat', sans-serif;
+  --colof_f: #222324;
+  --color-link: #fad6ee;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--font_0);
+  background-color: var(--colof_f);
+  color: #f0f0f0;
+  line-height: 1.6;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  letter-spacing  : -0.02em;
+}
+body.no-scroll {
+  overflow: hidden;
+}
+.header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  height: 120px;
+  background-color: var(--colof_f);
+  z-index: 9;
+  border-bottom: 1px solid #333;
+}
+
+.header__inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 1rem;
+}
+
+ .logo__link img {
+  width: 120px;
+filter: drop-shadow(0 0 4px rgba(191, 238, 255, 0.95));
+   } 
+h2[id] {
+  scroll-margin-top: 137px;
+}
+.header_menu-1 {
+  display: flex;
+  gap: 2rem;
+  list-style: none;
+}
+
+.menu_link {
+  color: white;
+  text-decoration: none;
+  font-size: 1rem;
+  transition: color 0.3s ease;
+  text-transform: uppercase;
+}
+
+.menu_link:hover {
+  color: var(--color-link);
+}
+
+.menu_link.contact {
+  border: 1px solid white;
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  font-weight: bold;
+}
+
+.burger {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  margin-right: 20px;
+}
+
+.burger span {
+  width: 25px;
+  height: 3px;
+  background: white;
+}
+
+main {
+  margin-top: 120px;
+  background-color: var(--colof_f);
+  flex: 1;
+}
+
+.content-wrapper {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 1rem 1rem;
+}
+
+.section-title {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+
+.work-grid {
+  display              : grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  justify-content: space-between;
+  gap: 2rem;
+  align-items: stretch; /* 👈 ключовий рядок */
+  margin-bottom: 20px;
+  justify-items: center;
+}
+
+.work_section {
+   width: 238px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  font-size: 0.9rem;
+  background-color: transparent;
+   padding: 0px 0.5rem; 
+  height: 100%; /* 👈 важливо для Grid */
+  box-sizing: border-box;
+}
+
+.work_section p{
+   text-align: left;
+  padding: 0 6px;
+}
+.work_section h3{
+  padding: 5px 0px;
+}
+
+.work-item {
+  width: 220px;
+  height: 220px;
+  border: 1px solid white;
+  padding: 1rem;
+  text-align: center;
+  text-decoration: none;
+  color: inherit;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+     background: linear-gradient(135deg, #c1ccd1, #595c58);
+}
+
+.work-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 5px 20px rgba(255, 255, 255, 0.1);
+}
+
+.work-item picture {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  height: 200px;
+  width: 100%;
+}
+
+.work-item img {
+  max-height: 100%;
+  max-width: 100%;
+  object-fit: contain;
+  transition: transform 0.3s ease;
+}
+
+.work-item:hover img {
+  transform: scale(1.1);
+}
+
+footer.footer {
+  background: white;
+  color: black;
+  text-align: center;
+  padding: 2rem 1rem;
+  margin-top: auto;
+}
+
+.footer__inner h1 {
+  font-size: 2rem;
+  font-weight: bold;
+}
+.footer__inner h2 {
+  font-size: 1.2rem;
+  font-weight: 300;
+}
+.footer__inner p {
+  margin-top: 1rem;
+}
+
+/* Адаптація для мобільних */
+@media (max-width: 768px) {
+  .header_menu {
+    position: fixed;
+    top: 100px;
+    left: 0;
+    width: 100%;
+    height: calc(100vh - 100px);
+    background: var(--colof_f);
+    flex-direction: column;
+    z-index: 10;
+    overflow-y: auto;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-10px);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+  }
+
+  .header_menu.active {
+    display: flex;
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+  }
+  .header_menu-1 {
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    padding: 1rem 0;
+  }
+
+  .burger {
+    display: flex;
+  }
+
+  .work-grid {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+.burger.open span:nth-child(1) {
+  transform: rotate(45deg) translate(6px, 6px);
+}
+.burger.open span:nth-child(2) {
+  opacity: 0;
+}
+.burger.open span:nth-child(3) {
+  transform: rotate(-45deg) translate(5px, -5px);
+}
+
+.burger span {
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+#scrollTopBtn {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  background-color: #4b4e50;
+  border: none;
+  border-radius: 50%;
+  padding: 0.75rem;
+  cursor: pointer;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  z-index: 50;
+}
+#scrollTopBtn svg {
+  display: block;
+}
+#scrollTopBtn.show {
+  opacity: 1;
+  visibility: visible;
+  transform: scale(1);
+}
+/* Підсвічування активного пункту меню */
+.menu_link.active {
+  color: var(--color-link);
+  font-weight: bold;
+  position: relative;
+}
+
+.menu_link.active::after {
+  content: '';
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: var(--color-link);
+}
+/* services */
+.article {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 1rem;
+  text-align: left;
+  color: #f5f5f5;
+  border-top: 1px solid #f5f5f5;
+  margin-bottom: 20px;
+}
+
+ .section-title {
+ /*  font-size: 4rem; */
+  font-size    : clamp(3rem, 10vw, 4rem);
+  font-weight: 300;
+  letter-spacing: -1px;
+  margin-bottom: 1rem;
+}
+
+.article h3 {
+  font-size    : clamp(0.8rem, 6vw, 2rem);
+  font-weight: 300;
+  line-height: 1.4;
+}
+
+.article p {
+  font-size: 1rem;
+  line-height: 1.8;
+  /* max-width: 700px; */
+  color: #cccccc;
+}
+.article a{
+  color: #cccccc;
+}
+
+.section-title {
+  position: relative;
+  display: inline-block;
+  --offset: -100px;
+}
+
+h3.section-1 {
+  position: relative;
+  left: clamp(40px, 21vw, 235px);
+  width: clamp(230px, 71vw, 500px);
+  padding-bottom: 20px;
+  /*  font-size    : clamp(0.8rem, 6vw, 2rem); */
+}
+
+.section-title::after {
+  content: '';
+  position: absolute;
+  top: 0.45em; 
+ /*  right: calc(-729px + var(--offset, 0px));  */
+ left: clamp(300px, calc(100vw - 100px + var(--offset, 0px)), 1600px);
+  width: 20px;
+  height: 20px;
+  background-color: white;
+  border-radius: 50%;
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.2);
+  animation: floatDot 6s ease-in-out infinite;
+  opacity: 0.85;
+  pointer-events: none;
+}
+
+@keyframes floatDot {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(10px);
+  }
+}
+/* --- GitHub Pages: Advantages vs. Limitations --- */
+.gh-section {
+  max-width: 1200px;
+  margin: 2rem auto;
+  padding: 2rem;
+  background-color: #1e1e1e;
+  color: #f5f5f5;
+  border-radius: 12px;
+}
+
+.gh-section h3 {
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 2rem;
+}
+
+.gh-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+}
+
+.gh-block {
+  padding: 1rem 1.5rem;
+  border-radius: 10px;
+  background-color: #2a2a2a;
+  box-shadow: 0 0 12px rgba(255, 255, 255, 0.05);
+}
+
+.gh-block h4 {
+  display: flex;
+  align-items: center;
+  font-size: 1.3rem;
+  margin-bottom: 1rem;
+  color: #fff;
+}
+
+.gh-icon {
+  width: 24px;
+  height: 24px;
+  margin-right: 0.5rem;
+  fill: none;
+  stroke: #4cc9f0;
+  stroke-width: 2;
+}
+
+.gh-block ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+.gh-block ul li {
+  margin-bottom: 0.7rem;
+  line-height: 1.5;
+  position: relative;
+  padding-left: 1.4rem;
+}
+
+.gh-block ul li::before {
+  content: '✓';
+  position: absolute;
+  left: 0;
+  color: #4cc9f0;
+}
+
+.limitations ul li::before {
+  content: '✕';
+  color: #f25f5c;
+}
+
+.gh-note {
+  margin-top: 2rem;
+  background-color: #262626;
+  border-left: 4px solid #4cc9f0;
+  padding: 1rem;
+  font-size: 0.95rem;
+  line-height: 1.6;
+  border-radius: 6px;
+}
