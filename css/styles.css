@@ -120,28 +120,28 @@ main {
 }
 
 .work-grid {
-  display              : grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  display : grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   justify-content: space-between;
-  gap: 2rem;
   align-items: stretch; /* 👈 ключовий рядок */
   margin-bottom: 20px;
   justify-items: center;
 }
 
 .work_section {
-   width: 238px;
+   width: 280px;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  text-align: center;
-  font-size: 0.9rem;
+   font-size: 0.9rem;
   background-color: transparent;
-   padding: 0px 0.5rem; 
-  height: 100%; /* 👈 важливо для Grid */
+   height: 100%; /* 👈 важливо для Grid */
   box-sizing: border-box;
 }
-
+.work_section a{
+  color: #ffffff;
+  font-size: 1rem;
+  padding-bottom: 5px;
+}
 .work_section p{
    text-align: left;
   padding: 0 6px;
@@ -151,10 +151,10 @@ main {
 }
 
 .work-item {
-  width: 220px;
-  height: 220px;
+  width: 270px;
+  height: 320px;
   border: 1px solid white;
-  padding: 1rem;
+  padding: 10px;
   text-align: center;
   text-decoration: none;
   color: inherit;
@@ -167,8 +167,9 @@ main {
 }
 
 .work-item:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 5px 20px rgba(255, 255, 255, 0.1);
+  /* transform: translateY(-5px); */
+   box-shadow: 0 5px 20px rgba(255, 255, 255, 0.8); 
+ /*  filter: drop-shadow(0 0 4px rgba(144, 144, 145, 0.95)); */
 }
 
 .work-item picture {
@@ -176,7 +177,7 @@ main {
   justify-content: center;
   align-items: center;
   overflow: hidden;
-  height: 200px;
+  height: 306px;
   width: 100%;
 }
 
@@ -184,12 +185,12 @@ main {
   max-height: 100%;
   max-width: 100%;
   object-fit: contain;
-  transition: transform 0.3s ease;
+/*    transition: transform 0.3s ease;  */
 }
 
-.work-item:hover img {
+/* .work-item:hover img {
   transform: scale(1.1);
-}
+} */
 
 footer.footer {
   background: white;
