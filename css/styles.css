@@ -123,18 +123,18 @@ main {
   display : grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   justify-content: space-between;
-  align-items: stretch; /* 👈 ключовий рядок */
+  align-items: stretch;
   margin-bottom: 20px;
   justify-items: center;
 }
 
 .work_section {
-   width: 280px;
+   width: 270px;
   display: flex;
   flex-direction: column;
    font-size: 0.9rem;
   background-color: transparent;
-   height: 100%; /* 👈 важливо для Grid */
+   height: 100%;
   box-sizing: border-box;
 }
 .work_section a{
@@ -152,7 +152,7 @@ main {
 
 .work-item {
   width: 270px;
-  height: 320px;
+  height: 326px;
   border: 1px solid white;
   padding: 10px;
   text-align: center;
@@ -165,12 +165,23 @@ main {
   transition: transform 0.3s ease, box-shadow 0.3s ease;
      background: linear-gradient(135deg, #c1ccd1, #595c58);
 }
-
-.work-item:hover {
-  /* transform: translateY(-5px); */
-   box-shadow: 0 5px 20px rgba(255, 255, 255, 0.8); 
- /*  filter: drop-shadow(0 0 4px rgba(144, 144, 145, 0.95)); */
+ .work-item {
+  position: relative;
+  overflow: hidden; 
 }
+
+.work-item::after {
+  content: '';
+  position: absolute;
+  inset: 0; 
+  background-color: rgba(0, 0, 0, 0); 
+  transition: background-color 0.3s ease;
+  z-index: 1;
+}
+
+.work-item:hover::after {
+  background-color: rgba(0, 0, 0, 0.3); 
+} 
 
 .work-item picture {
   display: flex;
@@ -185,12 +196,7 @@ main {
   max-height: 100%;
   max-width: 100%;
   object-fit: contain;
-/*    transition: transform 0.3s ease;  */
 }
-
-/* .work-item:hover img {
-  transform: scale(1.1);
-} */
 
 footer.footer {
   background: white;
@@ -315,7 +321,6 @@ footer.footer {
 }
 
  .section-title {
- /*  font-size: 4rem; */
   font-size    : clamp(3rem, 10vw, 4rem);
   font-weight: 300;
   letter-spacing: -1px;
@@ -331,7 +336,6 @@ footer.footer {
 .article p {
   font-size: 1rem;
   line-height: 1.8;
-  /* max-width: 700px; */
   color: #cccccc;
 }
 .article a{
@@ -349,14 +353,12 @@ h3.section-1 {
   left: clamp(40px, 21vw, 235px);
   width: clamp(230px, 71vw, 500px);
   padding-bottom: 20px;
-  /*  font-size    : clamp(0.8rem, 6vw, 2rem); */
-}
+  }
 
 .section-title::after {
   content: '';
   position: absolute;
   top: 0.45em; 
- /*  right: calc(-729px + var(--offset, 0px));  */
  left: clamp(300px, calc(100vw - 100px + var(--offset, 0px)), 1600px);
   width: 20px;
   height: 20px;
