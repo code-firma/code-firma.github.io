@@ -294,11 +294,12 @@ footer.footer {
   transform: scale(1);
 }
 /* Підсвічування активного пункту меню */
-.menu_link.active {
+ .menu_link.active {
   color: var(--color-link);
   font-weight: bold;
   position: relative;
-}
+   transition: all 0.3s ease;
+}  
 
 .menu_link.active::after {
   content: '';

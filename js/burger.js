@@ -36,30 +36,3 @@ document.querySelectorAll('.header_menu a').forEach(link => {
     closeMenu();
   });
 });
-// Підсвічування активного пункту
-document.querySelectorAll('.header_menu a').forEach(link => {
-  link.addEventListener('click', () => {
-    closeMenu();
-
-    document.querySelectorAll('.menu_link').forEach(item => {
-      item.classList.remove('active');
-    });
-    link.classList.add('active');
-
- // Зберігаємо href як активне меню
-    localStorage.setItem('activeMenu', link.getAttribute('href'));
-
-    // Прокрутка вгору (гладко)
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-  });
-});
-
-document.addEventListener('DOMContentLoaded', () => {
-  const activeHref = localStorage.getItem('activeMenu');
-  if (activeHref) {
-    const targetLink = document.querySelector(`.header_menu a[href="${activeHref}"]`);
-    if (targetLink) {
-      targetLink.classList.add('active');
-    }
-  }
-});
