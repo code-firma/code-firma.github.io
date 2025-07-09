@@ -20,27 +20,27 @@
 
 <body>
   <div id="SITE_CONTAINER">
-    <header class="header">
+    <header class="header" role="banner">
       <div class="header__inner">
         <a class="logo__link" href="index.html">
           <img src="images/logo_CodeFirma.png" alt="logo" />
         </a>
-        <nav class="header_menu" id="menu">
+        <nav class="header_menu" id="menu" role="navigation" aria-label="Головна навігація">
           <ul class="header_menu-1">
+            <li><a class="menu_link" href="#services" aria-current="page">services</a></li>
             <li><a class="menu_link" href="#work">work</a></li>
-            <li><a class="menu_link" href="#services">services</a></li>
-            <li><a class="menu_link" href="#journal">journal</a></li>
+            <!-- <li><a class="menu_link" href="#journal">journal</a></li> -->
             <li><a class="menu_link" href="#about">about</a></li>
             <li><a class="menu_link contact" href="#contact">CONTACT</a></li>
           </ul>
         </nav>
-        <button class="burger" id="burger" aria-label="Menu">
+        <button class="burger" id="burger" aria-label="Menu" aria-controls="menu" aria-expanded="false">
           <span></span><span></span><span></span>
         </button>
       </div>
     </header>
 
-    <main>
+    <main role="main">
 
       <div class="article">
         <h2 id="services" class="section-title">SERVICES</h2>
@@ -48,7 +48,7 @@
         <h3>Сайт на GitHub Pages — ідеальне рішення для старту</h3>
         <h4>Що таке GitHub Pages?</h4>
         <p><strong>GitHub Pages</strong> — це безкоштовний сервіс від платформи <a href="https://github.com"
-           target="_blank">GitHub</a>, який дозволяє розміщувати прості сайти (HTML, CSS, JS) прямо з репозиторію. Це
+            target="_blank">GitHub</a>, який дозволяє розміщувати прості сайти (HTML, CSS, JS) прямо з репозиторію. Це
           особливо зручно для сайтів-візиток, портфоліо, односторінкових сайтів або лендінгів для бізнесу.</p>
         <section class="gh-section">
           <h3>GitHub Pages: Переваги vs Обмеження</h3>
@@ -78,7 +78,7 @@
               <h4>
                 <svg class="gh-icon" viewBox="0 0 24 24">
                   <path
-                   d="M12 2a10 10 0 100 20 10 10 0 000-20zM10.29 8.71a1 1 0 011.42 0L12 9.59l.29-.88a1 1 0 011.42 0 1 1 0 010 1.42L13.41 11l.88.29a1 1 0 010 1.42 1 1 0 01-1.42 0L12 12.41l-.29.88a1 1 0 01-1.42 0 1 1 0 010-1.42l.88-.29-.88-.29a1 1 0 010-1.42z" />
+                    d="M12 2a10 10 0 100 20 10 10 0 000-20zM10.29 8.71a1 1 0 011.42 0L12 9.59l.29-.88a1 1 0 011.42 0 1 1 0 010 1.42L13.41 11l.88.29a1 1 0 010 1.42 1 1 0 01-1.42 0L12 12.41l-.29.88a1 1 0 01-1.42 0 1 1 0 010-1.42l.88-.29-.88-.29a1 1 0 010-1.42z" />
                 </svg>
                 Обмеження
               </h4>
@@ -122,7 +122,7 @@
             </a>
             <h3>SmartMaster</h3>
             <a href="https://smart-master.github.io/" target="_blank"
-             rel="noopener noreferrer">smart-master.github.io</a>
+              rel="noopener noreferrer">smart-master.github.io</a>
             <p>Надійні рішення. Від першої цеглини до даху.</p>
           </div>
 
@@ -150,16 +150,28 @@
         </div>
       </section>
 
-      <div class="article">
+     <!--  <div class="article">
         <h2 id="journal" class="section-title">JOURNAL</h2>
         <h3 class="section-1">Ідеї, що формують цифрове майбутнє</h3>
         <p>Ми ділимося думками, які надихають — про дизайн, розробку та новітні технології у світі веб.</p>
-      </div>
+      </div> -->
       <div class="article">
         <h2 id="about" class="section-title">ABOUT</h2>
         <h3 class="section-1">Прості вебсайти — Розумні рішення</h3>
-        <p> Ми створюємо чисті та зручні вебсайти для малого бізнесу, фрілансерів та стартапів. Ніякого безладу — лише
-          що важливо і працює.</p>
+        <ul class="about-list">
+          <li>Ми створюємо чисті та зручні вебсайти для малого бізнесу, фрілансерів та стартапів. Ніякого безладу — лише
+            що важливо і працює.</li>
+          <li>Ми спеціалізуємося на створенні легких, зручних і зрозумілих сайтів для малого бізнесу, фрілансерів та
+            креативних проєктів. Жодних складнощів — лише те, що справді потрібно.</li>
+          <li>Code-Firma — це команда, яка допомагає брендам заявити про себе онлайн. Ми створюємо швидкі, адаптивні та
+            естетичні сайти, які просто працюють.</li>
+          <li>Ми віримо, що кожен бізнес заслуговує на стильну цифрову присутність. Створюємо сайти, які підкреслюють
+            суть
+            вашої справи, без перевантажень і складних рішень.</li>
+          <li>Наша місія — створювати чисті й ефективні сайти. Ми використовуємо прості технології для досягнення
+            сучасного
+            вигляду і гарної продуктивності.</li>
+        </ul>
       </div>
       <div class="article">
         <h2 id="contact" class="section-title">CONTACT</h2>
